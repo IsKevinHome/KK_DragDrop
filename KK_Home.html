@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="KumaKuma.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<nav class="nav-container">
+			<a href="#home" class="nav-home">Home</a>
+
+			<ul class="nav-list">
+				<li class="nav-item">
+					<a href="#">Hiragana</a>
+				</li>
+				<li class="nav-item">
+					<a href="#">Katakana</a>
+				</li>
+				<li class="nav-item">
+					<a href="#">Kanji</a>
+				</li>
+			</ul>
+
+			<a href="#signin" class="nav-log-in">Log in</a>
+		</nav>
+		<main>
+			<section class="r-characters">
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_a"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="a">A</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_i"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="i">I</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_u"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="u">U</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_e"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="e">E</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_o"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="o">O</div>
+				</div>
+
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_ka"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ka">KA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ki"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ki">KI</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ku"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ku">KU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ke"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ke">KE</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ko"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ko">KO</div>
+				</div>
+
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_sa"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="sa">SA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_shi"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="shi">SHI</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_su"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="su">SU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_se"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="se">SE</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_so"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="so">SO</div>
+				</div>
+
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_ta"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ta">TA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_chi"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="chi">CHI</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_tsu"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="tsu">TSU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_te"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="te">TE</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_to"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="to">TO</div>
+				</div>
+
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_na"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="na">NA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ni"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ni">NI</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_nu"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="nu">NU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ne"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ne">NE</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_no"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="no">NO</div>
+				</div>
+
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_ha"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ha">HA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_hi"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="hi">HI</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_fu"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="fu">FU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_he"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="he">HE</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ho"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ho">HO</div>
+				</div>
+
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_ma"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ma">MA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_mi"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="mi">MI</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_mu"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="mu">MU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_me"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="me">ME</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_mo"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="mo">MO</div>
+				</div>
+
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_ra"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ra">RA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ri"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ri">RI</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ru"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ru">RU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_re"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="re">RE</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ro"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ro">RO</div>
+				</div>
+
+				<div class="r-container">
+					<div
+						class="r-char-dropzone"
+						id="r_ra"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ra">RA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ri"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ri">RI</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ru"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ru">RU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_re"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="re">RE</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_ro"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ro">RO</div>
+				</div>
+
+				<div class="r-container-ya">
+					<div
+						class="r-char-dropzone"
+						id="r_ya"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="ya">YA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_yu"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="yu">YU</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_yo"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="yo">YO</div>
+				</div>
+
+				<div class="r-container-wa">
+					<div
+						class="r-char-dropzone"
+						id="r_wa"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="wa">WA</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_wo"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="wo">WO</div>
+
+					<div
+						class="r-char-dropzone"
+						id="r_n"
+						ondrop="drop(event)"
+						ondragover="allowDrop(event)"
+					></div>
+					<div class="r-char" data-roman="n">N</div>
+				</div>
+			</section>
+
+			<section
+				id="j-characters"
+				class="j-characters"
+				ondrop="drop(event)"
+				ondragover="allowDrop(event)"
+			></section>
+		</main>
+	</body>
+	<script src="KK_DragDrop.js"></script>
+</html>
