@@ -57,7 +57,7 @@ BELOW IS THE CSS FOR THE DRAG AND DROP PORTION:
 	padding: 0.5rem;
 	border: 1px solid black;
 	flex-direction: row;
-	/* justify-content: center; */
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
