@@ -64,25 +64,46 @@ BELOW IS THE CSS FOR THE DRAG AND DROP PORTION:
 .r-container {
 	margin: 0.25rem;
 	width: 5rem;
+	background-color: grey;
+}
+
+.r-container-correct {
+	margin: 0.25rem;
+	width: 5rem;
+	background-color: #90be6d;
 }
 
 .r-container-ya {
 	margin: 0.25rem;
 	width: 5rem;
 	height: 7.5rem;
+	background-color: grey;
 }
 
 .r-container-wa {
 	margin: 0.25rem;
 	width: 5rem;
-	height: 7.5rem;
+	height: 5rem;
+	background-color: grey;
+}
+
+.r-container-n {
+	margin: 0.25rem;
+	width: 5rem;
+	height: 2.5rem;
+	background-color: grey;
+}
+
+.r-container-correct-n {
+	margin: 0.25rem;
+	height: 2.5rem;
+	background-color: #90be6d;
 }
 
 div {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0.5rem;
-	background-color: grey;
 	justify-content: center;
 }
 

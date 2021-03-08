@@ -304,35 +304,63 @@ function allowDrop(event) {
 	event.preventDefault();
 }
 
+function correctChecker(column) {
+	let length = column.getElementsByTagName('img').length;
+
+	if (column === document.getElementById('j_n') && length === 1) {
+		column.classList.remove('r-container-n');
+		column.classList.add('r-container-correct-n');
+	}
+
+	if (length === 5) {
+		column.classList.remove('r-container');
+		column.classList.add('r-container-correct');
+	}
+}
+
 function drop(event) {
 	event.preventDefault();
 	var data = event.dataTransfer.getData('text');
 
 	let reference = document.getElementById(event.target.id);
+	let parentContainer = reference.parentNode.childNodes;
+	// console.log(parentContainer);
+
 	let romanCharacter = reference.nextSibling.nextSibling.dataset.roman;
 	// This checks if it's the cooresponding character, plays a sound, and changes the bottom image for 1 second.
 	if (data === romanCharacter) {
-		console.log('correct');
 		event.target.appendChild(document.getElementById(`jval-${data}`));
 
-		// 	document.getElementById('myImage').src = src = '/images/right.png';
-		// 	play_single_sound('audiotag2');
-		// 	setTimeout(reset, 1000);
-		// } else {
-		// 	document.getElementById('myImage').src = src = '/images/wrong.png';
-		// 	play_single_sound('audiotag1');
-		// 	setTimeout(reset, 1000);
+		let jOne = document.getElementById('j_a');
+		let jTwo = document.getElementById('j_ka');
+		let jThree = document.getElementById('j_sa');
+		let jFour = document.getElementById('j_ta');
+		let jFive = document.getElementById('j_na');
+		let jSix = document.getElementById('j_ha');
+		let jSeven = document.getElementById('j_ma');
+		let jEight = document.getElementById('j_ra');
+		let jNine = document.getElementById('j_ya');
+		let jTen = document.getElementById('j_wa');
+		let jEleven = document.getElementById('j_n');
+
+		correctChecker(jOne);
+		correctChecker(jTwo);
+		correctChecker(jThree);
+		correctChecker(jFour);
+		correctChecker(jFive);
+		correctChecker(jSix);
+		correctChecker(jSeven);
+		correctChecker(jEight);
+		correctChecker(jNine);
+		correctChecker(jTen);
+		correctChecker(jEleven);
+		// this checks for amount of img elements inside of another element.
+		// console.log(
+		// 	document.getElementById('j_a').getElementsByTagName('img').length
+		// );
 	}
 }
 
-// this function will reset to default image.
-// function reset() {
-// 	document.getElementById('myImage').src = src = '/images/neutral.png';
-// }
-// this function will play a sound.
-// function play_single_sound(song) {
-// 	document.getElementById(song).play();
-// }
 // Fisher Yates Algorithm to shuffle our array.
 function shuffle(array) {
 	var m = array.length,
@@ -346,3 +374,6 @@ function shuffle(array) {
 	}
 	return array;
 }
+
+// write an event listener that checks for childNodes.length  so you can update the div
+// colors when all 5 are dropped into their containers.
