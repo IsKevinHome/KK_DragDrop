@@ -304,6 +304,7 @@ function allowDrop(event) {
 	event.preventDefault();
 }
 
+// CHECKS AND CHANGES COLOR IF COLUMN IS FILLED.
 function correctChecker(column) {
 	let length = column.getElementsByTagName('img').length;
 
@@ -342,22 +343,37 @@ function drop(event) {
 		let jNine = document.getElementById('j_ya');
 		let jTen = document.getElementById('j_wa');
 		let jEleven = document.getElementById('j_n');
+		let japanColumns = [
+			jOne,
+			jTwo,
+			jThree,
+			jFour,
+			jFive,
+			jSix,
+			jSeven,
+			jEight,
+			jNine,
+			jTen,
+			jEleven,
+		];
 
-		correctChecker(jOne);
-		correctChecker(jTwo);
-		correctChecker(jThree);
-		correctChecker(jFour);
-		correctChecker(jFive);
-		correctChecker(jSix);
-		correctChecker(jSeven);
-		correctChecker(jEight);
-		correctChecker(jNine);
-		correctChecker(jTen);
-		correctChecker(jEleven);
-		// this checks for amount of img elements inside of another element.
-		// console.log(
-		// 	document.getElementById('j_a').getElementsByTagName('img').length
-		// );
+		japanColumns.forEach(function correctChecker(column) {
+			let length = column.getElementsByTagName('img').length;
+
+			if (length === 5) {
+				column.classList.remove('r-container');
+				column.classList.add('r-container-correct');
+			} else if (column === document.getElementById('j_ya') && length === 3) {
+				column.classList.remove('r-container-ya');
+				column.classList.add('r-container-correct-ya');
+			} else if (column === document.getElementById('j_wa') && length === 2) {
+				column.classList.remove('r-container-wa');
+				column.classList.add('r-container-correct-wa');
+			} else if (column === document.getElementById('j_n') && length === 1) {
+				column.classList.remove('r-container-n');
+				column.classList.add('r-container-correct-n');
+			}
+		});
 	}
 }
 
