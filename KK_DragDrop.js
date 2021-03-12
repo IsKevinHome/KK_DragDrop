@@ -294,6 +294,10 @@ for (const character of result) {
 	section.appendChild(wrapper);
 }
 
+function play_single_sound(song) {
+	document.getElementById(song).play();
+}
+
 // below is the drag and drop code
 function drag(event) {
 	let data = event.target.dataset.jval;
@@ -305,19 +309,19 @@ function allowDrop(event) {
 }
 
 // CHECKS AND CHANGES COLOR IF COLUMN IS FILLED.
-function correctChecker(column) {
-	let length = column.getElementsByTagName('img').length;
+// function correctChecker(column) {
+// 	let length = column.getElementsByTagName('img').length;
 
-	if (column === document.getElementById('j_n') && length === 1) {
-		column.classList.remove('r-container-n');
-		column.classList.add('r-container-correct-n');
-	}
+// 	if (column === document.getElementById('j_n') && length === 1) {
+// 		column.classList.remove('r-container-n');
+// 		column.classList.add('r-container-correct-n');
+// 	}
 
-	if (length === 5) {
-		column.classList.remove('r-container');
-		column.classList.add('r-container-correct');
-	}
-}
+// 	if (length === 5) {
+// 		column.classList.remove('r-container');
+// 		column.classList.add('r-container-correct');
+// 	}
+// }
 
 function drop(event) {
 	event.preventDefault();
@@ -331,6 +335,9 @@ function drop(event) {
 	// This checks if it's the cooresponding character, plays a sound, and changes the bottom image for 1 second.
 	if (data === romanCharacter) {
 		event.target.appendChild(document.getElementById(`jval-${data}`));
+
+		// plays sound if correct.
+		play_single_sound('correctDrop');
 
 		let jOne = document.getElementById('j_a');
 		let jTwo = document.getElementById('j_ka');
@@ -366,6 +373,7 @@ function drop(event) {
 			} else if (column === document.getElementById('j_ya') && length === 3) {
 				column.classList.remove('r-container-ya');
 				column.classList.add('r-container-correct-ya');
+				play_single_sound('finishedCol');
 			} else if (column === document.getElementById('j_wa') && length === 2) {
 				column.classList.remove('r-container-wa');
 				column.classList.add('r-container-correct-wa');
@@ -391,5 +399,7 @@ function shuffle(array) {
 	return array;
 }
 
-// write an event listener that checks for childNodes.length  so you can update the div
-// colors when all 5 are dropped into their containers.
+// need a way to pop elements of the japanColumns array into a new array, with this we can check if the
+// entire page is completed, as well as make it so we can play a song at the end of each column, currently
+// once any column is completed it will run the finished after each drop, if we remove that particualr column
+// from our array this shouldnt be an issue.
